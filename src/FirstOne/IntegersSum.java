@@ -9,9 +9,11 @@ public class IntegersSum {
         Integer secondNumber;
         Scanner in = new Scanner(System.in);
         System.out.print("Введите первое число :");
-        firstNumber = in.nextInt();
-        System.out.print("Введите второе число :");
-        secondNumber = in.nextInt();
+
+        firstNumber = checkingException(in.next());
+                System.out.print("Введите второе число :");
+
+        secondNumber = checkingException(in.next());
         {
             if (firstNumber > secondNumber) {
                 System.out.println(String.format("Число %s больше %s", firstNumber, secondNumber));
@@ -20,6 +22,17 @@ public class IntegersSum {
             }
         }
         System.out.println("Сумма чисел: " + (firstNumber + secondNumber));
+    }
+
+    public static Integer checkingException(String s) {
+        try{
+            return Integer.parseInt(s);
+
+        }catch (NumberFormatException e){
+            System.out.println(e);
+            System.exit(1);
+           return null;
+        }
     }
 
 }
