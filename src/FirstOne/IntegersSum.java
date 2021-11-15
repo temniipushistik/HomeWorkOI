@@ -11,7 +11,7 @@ public class IntegersSum {
         System.out.print("Введите первое число :");
 
         firstNumber = checkingException(in.next());
-                System.out.print("Введите второе число :");
+        System.out.print("Введите второе число :");
 
         secondNumber = checkingException(in.next());
         {
@@ -25,13 +25,13 @@ public class IntegersSum {
     }
 
     public static Integer checkingException(String s) {
-        try{
+        try {
             return Integer.parseInt(s);
 
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println(e);
             System.exit(1);
-           return null;
+            return null;
         }
     }
 
